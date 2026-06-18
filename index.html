@@ -1,14 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blyndy — Mobilidade Blindada</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       background: #020202;
@@ -25,7 +31,7 @@
       background-attachment: fixed;
     }
 
-    /* Overlay preto */
+    /* Overlay */
     body::before {
       content: '';
       position: fixed;
@@ -33,7 +39,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(2, 2, 2, 0.92);
+      background: rgba(2, 2, 2, 0.823);
       z-index: -1;
     }
 
@@ -46,8 +52,8 @@
     /* Header */
     .header {
       text-align: center;
-      margin-bottom: 40px;
-      padding-top: 20px;
+      margin-bottom: 0;
+      padding-top: 10px;
     }
 
     .logo {
@@ -55,7 +61,8 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       color: #FFF;
-      margin-bottom: 12px;
+      margin-bottom: -120px;
+      /* Reduzido para compensar o espaço transparente da imagem */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -72,7 +79,7 @@
       letter-spacing: 0.2em;
       color: rgba(224, 224, 224, 0.5);
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .divider {
@@ -84,7 +91,7 @@
 
     /* Cards */
     .cards {
-      margin-top: 40px;
+      margin-top: 10px;
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -190,55 +197,73 @@
     }
 
     /* Downloads Section */
+    .downloads-wrapper {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0, 96, 102, 0.1);
+      border-bottom: 1px solid rgba(0, 96, 102, 0.1);
+      padding-bottom: 20px;
+      text-align: left;
+    }
+
+    .downloads-heading {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFF;
+      margin-bottom: 16px;
+    }
+
     .downloads-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      margin-top: 20px;
-      padding: 20px 0;
-      border-top: 1px solid rgba(0, 96, 102, 0.1);
-      border-bottom: 1px solid rgba(0, 96, 102, 0.1);
     }
 
-    .download-card {
+    .store-button {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px;
-      border: 1px solid rgba(0, 96, 102, 0.2);
-      border-radius: 8px;
-      background: rgba(0, 96, 102, 0.05);
+      justify-content: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid rgba(0, 96, 102, 0.3);
+      border-radius: 10px;
+      background: rgba(0, 96, 102, 0.08);
       text-decoration: none;
-      color: inherit;
+      color: #FFF;
       transition: all 0.3s ease;
       cursor: pointer;
     }
 
-    .download-card:hover {
-      background: rgba(0, 96, 102, 0.1);
+    .store-button:hover {
+      background: rgba(0, 96, 102, 0.2);
       border-color: #006066;
     }
 
-    .download-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: rgba(0, 96, 102, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
+    .store-icon {
+      font-size: 32px;
       color: #006066;
     }
 
-    .download-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: #FFF;
-      text-align: center;
+    .store-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
     }
+
+    .store-small {
+      font-size: 10px;
+      line-height: 1.2;
+      opacity: 0.7;
+    }
+
+    .store-large {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+
 
     .social {
       display: flex;
@@ -300,61 +325,66 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">B L <span class="teal">Y</span> N D Y</div>
+      <div class="logo">
+        <img src="./semfundo.png" alt="Blyndy Logo" style="max-width: 380px; width: 100%; height: auto;" />
+      </div>
       <div class="tagline">Mobilidade Blindada Sob Demanda</div>
       <div class="divider"></div>
     </div>
 
     <div class="cards">
-      <a href="#" class="card">
+      <a href="https://blyndy.com.br/experiencia" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-icon">
           <i class="ti ti-phone"></i>
         </div>
         <div class="card-content">
-          <div class="card-title">Conhecer o App</div>
-          <div class="card-desc">Descubra como a BLYNDY transforma sua mobilidade com segurança e elegância.</div>
+          <div class="card-title">A Experiência BLYNDY</div>
+          <div class="card-desc">Conheça uma nova forma de se deslocar com proteção, discrição e conforto.</div>
         </div>
         <div class="card-arrow">
           <i class="ti ti-arrow-right"></i>
         </div>
       </a>
 
-      <a href="#" class="card">
+      <a href="https://api.whatsapp.com/send/?phone=5521972232626&text&type=phone_number&app_absent=0" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-icon">
           <i class="ti ti-headphones"></i>
         </div>
         <div class="card-content">
           <div class="card-title">Concierge BLYNDY</div>
-          <div class="card-desc">Atendimento dedicado para clientes que valorizam discrição, agilidade e excelência.</div>
+          <div class="card-desc">Atendimento personalizado para solicitações especiais, agendamentos e experiências sob
+            medida.</div>
         </div>
         <div class="card-arrow">
           <i class="ti ti-arrow-right"></i>
         </div>
       </a>
 
-      <a href="#" class="card">
+      <a href="https://blyndy.com.br/corporate" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-icon">
           <i class="ti ti-briefcase"></i>
         </div>
         <div class="card-content">
           <div class="card-title">BLYNDY Corporate</div>
-          <div class="card-desc">Soluções corporativas para executivos, conselhos, famílias e equipes estratégicas.</div>
+          <div class="card-desc">Controle, rastreabilidade e mobilidade blindada para empresas que valorizam excelência.
+          </div>
         </div>
         <div class="card-arrow">
           <i class="ti ti-arrow-right"></i>
         </div>
       </a>
 
-      <a href="#" class="card">
+      <a href="https://blyndy.com.br/" class="card" target="_blank" rel="noopener noreferrer">
         <div class="card-icon">
           <i class="ti ti-gift"></i>
         </div>
         <div class="card-content">
-          <div class="card-title">Benefício de Boas-Vindas</div>
-          <div class="card-desc">Uma condição especial para sua primeira experiência BLYNDY.</div>
+          <div class="card-title">Convite BLYNDY</div>
+          <div class="card-desc">Conheça a experiência BLYNDY com uma condição exclusiva de boas-vindas.</div>
         </div>
         <div class="card-arrow">
           <i class="ti ti-arrow-right"></i>
@@ -362,25 +392,30 @@
       </a>
     </div>
 
-    <div class="downloads-section">
-      <a href="#" class="download-card">
-        <div class="download-icon">
-          <i class="ti ti-brand-apple"></i>
-        </div>
-        <div class="download-title">Download iOS</div>
-      </a>
+    <div class="downloads-wrapper">
+      <div class="downloads-heading">Baixe o app</div>
+      <div class="downloads-section">
+        <a href="https://apps.apple.com/app/id6762130609" class="store-button" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-brand-apple store-icon"></i>
+          <div class="store-text">
+            <span class="store-small">Baixar na</span>
+            <span class="store-large">App Store</span>
+          </div>
+        </a>
 
-      <a href="#" class="download-card">
-        <div class="download-icon">
-          <i class="ti ti-brand-google-play"></i>
-        </div>
-        <div class="download-title">Download Android</div>
-      </a>
+        <a href="https://play.google.com/store/apps/details?id=com.secureride.companion&hl=pt_BR" class="store-button" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-brand-google-play store-icon"></i>
+          <div class="store-text">
+            <span class="store-small">Disponível no</span>
+            <span class="store-large">Google Play</span>
+          </div>
+        </a>
+      </div>
     </div>
 
     <div class="footer">
       <div class="help-text">Precisa de ajuda?</div>
-      <a href="#" class="concierge-link">
+      <a href="https://api.whatsapp.com/send/?phone=5521972232626&text&type=phone_number&app_absent=0" class="concierge-link" target="_blank" rel="noopener noreferrer">
         <i class="ti ti-brand-whatsapp" style="margin-right: 6px; vertical-align: middle;"></i>
         Falar com Concierge
       </a>
@@ -399,8 +434,7 @@
   <script>
     // Card interactions
     document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', function(e) {
-        e.preventDefault();
+      card.addEventListener('click', function (e) {
         // Add interaction feedback
         this.style.transform = 'scale(0.98)';
         setTimeout(() => {
@@ -410,4 +444,5 @@
     });
   </script>
 </body>
+
 </html>
